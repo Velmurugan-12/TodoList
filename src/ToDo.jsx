@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const ToDo = () => {
   const [task, setTask] = useState("");
@@ -24,7 +24,7 @@ const ToDo = () => {
 
   return (
     <div className='min-h-screen bg-gray-100 flex items-center justify-center'>
-      <div className='bg-gray-300 shadow-lg rounded-xl p-6 w-full max-w-md'>
+      <div className='bg-gray-100 border border-black shadow-lg rounded-xl p-6 w-full max-w-md h-80 '>
         <h1 className='font-bold text-2xl mb-6 text-center text-indigo-600'>
           To-Do List
         </h1>
@@ -35,12 +35,12 @@ const ToDo = () => {
             placeholder='Enter the task!'
             value={task}
             onChange={(e) => setTask(e.target.value)}
-            className='flex-1 border border-gray-300 rounded-l px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400'
+            className='flex-1 border border-gray-300 rounded-l px-3 py-2 focus:outline-none focus:ring-1 focus:ring-indigo-300'
           />
 
           <button
             onClick={addTask}
-            className='px-4 py-2 bg-indigo-500 text-white rounded-r hover:bg-indigo-600 transition'
+            className='px-4 py-2 bg-indigo-500 text-white rounded-r hover:bg-indigo-600 transition focus:outline-none focus:ring-1 focus:ring-indigo-300'
           >
             Add Task
           </button>
@@ -61,14 +61,14 @@ const ToDo = () => {
 
               <span
                 onClick={() => toggleTask(t.id)}
-                className={`cursor-pointer flex-1 min-w-0 px-2 break-words ${t.done ? "line-through text-gray-400" : ""}`}
+                className={`cursor-pointer flex-1 min-w-0 px-2  font-semibold break-words ${t.done ? "line-through text-gray-400" : ""}`}
               >
                 {t.text}
               </span>
 
               <button
                 onClick={() => deleteTask(t.id)}
-                className='text-red-500 hover:text-red-700'
+                className='text-red-500 hover:text-red-700 transition-transform duration-300 ease-in-out transform hover:scale-125 hover:rotate-12 font-bold'
               >
                 ✕
               </button>
